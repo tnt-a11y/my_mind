@@ -1,0 +1,16 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Games",
+  "Description": "Third-person exploration on a tropical coast.",
+  "Modules": [
+    {"Name": "Saltwind", "Type": "Runtime", "LoadingPhase": "Default"}
+  ],
+  "Plugins": [
+    {"Name": "EnhancedInput", "Enabled": true},
+    {"Name": "PythonScriptPlugin", "Enabled": true},
+    {"Name": "EditorScriptingUtilities", "Enabled": true},
+    {"Name": "ModelingToolsEditorMode", "Enabled": false},
+    {"Name": "Fab", "Enabled": false}
+  ]
+}

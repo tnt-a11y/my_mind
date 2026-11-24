@@ -74,3 +74,15 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+/Binaries/
+/Build/
+/Intermediate/
+/DerivedDataCache/
+/Saved/
+__pycache__/
+*.pyc
+*.zip
+*.pdb
+/.saltwind-work/
+!Content/**/*_BuiltData.uasset

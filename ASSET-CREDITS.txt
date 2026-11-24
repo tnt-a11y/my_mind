@@ -1,0 +1,46 @@
+SALTWIND
+
+The coconut palm, royal palm, banana plant, tree fern, mangrove tree,
+golden cane palm and cycad are by vinish.dev, under CC BY 4.0.
+https://vinish.dev/free-3d-models/palms
+https://creativecommons.org/licenses/by/4.0/
+Models were imported into Unreal Engine and placed at varied scales and rotations.
+
+The shore palm is from Grab3D, under CC0.
+https://grab3d.com/models/nature/palm-tree/
+
+Shoreline and forest textures and rock scans are from Poly Haven, under CC0.
+https://polyhaven.com/a/coast_sand_03
+https://polyhaven.com/a/damp_beach_sand_02
+https://polyhaven.com/a/forest_leaves_02
+https://polyhaven.com/a/coast_sand_rocks_02
+https://polyhaven.com/a/boulder_01
+https://polyhaven.com/a/mountainside
+https://polyhaven.com/a/rock_moss_set_01
+https://polyhaven.com/a/coast_rocks_01
+https://polyhaven.com/a/coast_sand_05
+https://polyhaven.com/a/forrest_ground_01
+https://polyhaven.com/a/fern_02
+https://polyhaven.com/a/shrub_sorrel_01
+https://polyhaven.com/a/island_tree_01
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Calm ocean waves by SamsterBirdies and Jungle Sounds Background
+Ambience 1 by paulprit are from Freesound, under CC0.
+https://freesound.org/people/SamsterBirdies/sounds/578524/
+https://freesound.org/people/paulprit/sounds/724054/
+
+Manny and his land locomotion animations are by Epic Games, from the
+Unreal Engine Third Person template.
+
+Swimming and treading animations from Universal Animation Library by
+Quaternius, CC0. Retargeted to Manny.
+https://quaternius.com/packs/universalanimationlibrary.html
+
+Recorded footsteps and wading sounds from Freesound, under CC0.
+Felix Blume, Footsteps with sneakers, slowly walking on sand in the desert.
+https://freesound.org/people/felix.blume/sounds/705513/
+SpliceSound, Footsteps, sneakers on dry leaves.
+https://freesound.org/people/SpliceSound/sounds/218305/
+Breviceps, Step into water puddle / wade.
+https://freesound.org/people/Breviceps/sounds/450621/
