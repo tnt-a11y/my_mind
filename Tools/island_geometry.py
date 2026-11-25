@@ -48,9 +48,10 @@ def terrain(x, y):
         dx, dy = (x - cx) / rx, (y - cy) / ry
         angle = math.atan2(dy, dx)
         taper = 1 - math.hypot(dx, dy) + .11 * math.sin(5 * angle)
-        if taper > -.45:
+        if taper > -1.05:
             islet = peak * max(0, taper) ** .80 + 7 * min(taper, 0)
-            base = max(base, islet)
+            apron = smooth(-1.05, -.25, taper)
+            base += apron * max(0, islet - base)
     return max(-24.0, base)
 
 

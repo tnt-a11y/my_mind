@@ -5,9 +5,13 @@
 #include "GameFramework/HUD.h"
 #include "SaltwindExplorer.generated.h"
 
+class UAnimInstance;
+class UAnimMontage;
 class UAnimSequence;
+class ASaltwindWeather;
 class UAudioComponent;
 class UCameraComponent;
+class UDecalComponent;
 class UInputAction;
 class UInputMappingContext;
 class UMaterialInterface;
@@ -24,6 +28,7 @@ class ASaltwindExplorer : public ACharacter
 public:
     explicit ASaltwindExplorer(const FObjectInitializer& Init);
     USaltwindWaterMovement* GetWaterMovement() const;
+    void ReleaseMovementControls();
     bool ShouldShowControls() const { return bShowControls; }
     virtual void Tick(float DeltaTime) override;
     virtual void Landed(const FHitResult& Hit) override;
@@ -40,12 +45,17 @@ private:
     void StopRiseOrJump();
     void StartDive();
     void StopDive();
+    void StartSprint();
+    void StopSprint();
     void AdvanceTime();
+    void ToggleRain();
     void ToggleControls();
     void ResetToBeach();
     void UpdateSwimming(float DeltaSeconds);
     void UpdateAudio(float DeltaSeconds);
-    void PlayFootstep(const FHitResult* Surface = nullptr, float Volume = 0.7f);
+    void UpdateFootsteps(float DeltaSeconds);
+    void PlayFootstep(const FHitResult& Surface, float Volume, bool bPrint);
+    void StampFootprint(const FHitResult& Surface, float Wetness);
 
     UPROPERTY() TObjectPtr<UCameraComponent> Camera;
     UPROPERTY() TObjectPtr<USpringArmComponent> CameraBoom;
@@ -57,22 +67,32 @@ private:
     UPROPERTY() TObjectPtr<UInputAction> JumpAction;
     UPROPERTY() TSubclassOf<UAnimInstance> LandAnimation;
     UPROPERTY() TObjectPtr<UAnimSequence> SwimStroke;
+    UPROPERTY() TObjectPtr<UAnimSequence> WadeToSwim;
+    UPROPERTY() TObjectPtr<UAnimSequence> SubmergedStroke;
     UPROPERTY() TObjectPtr<UAnimSequence> TreadWater;
     UPROPERTY() TObjectPtr<UAnimSequence> CurrentSwimAnimation;
+    UPROPERTY() TObjectPtr<UAnimMontage> SwimMontage;
     UPROPERTY() TObjectPtr<UMaterialInterface> Underwater;
+    UPROPERTY() TObjectPtr<UMaterialInterface> FootprintMaterial;
     UPROPERTY() TObjectPtr<UAudioComponent> Surf;
+    UPROPERTY() TObjectPtr<UAudioComponent> ForestAmbience;
     UPROPERTY() TObjectPtr<UAudioComponent> UnderwaterAudio;
+    UPROPERTY() TObjectPtr<ASaltwindWeather> Weather;
     UPROPERTY() TArray<TObjectPtr<USoundBase>> SandSteps;
     UPROPERTY() TArray<TObjectPtr<USoundBase>> LeafSteps;
     UPROPERTY() TArray<TObjectPtr<USoundBase>> WaterSteps;
 
-    FVector LastStepPosition = FVector::ZeroVector;
-    float DistanceBetweenSteps = 0.0f;
+    TArray<TWeakObjectPtr<UDecalComponent>> Footprints;
+    TArray<TWeakObjectPtr<UDecalComponent>> ShorelineFootprints;
+    double LastFootHeight[2] = {};
+    double LastContactTime[2] = {-1.0, -1.0};
+    bool bFootPlanted[2] = {};
+    float FootprintUpdateElapsed = 0.0f;
     float WaterViewWeight = 0.0f;
     float WaveAudioWeight = 0.0f;
     int32 PreviousFootstep = INDEX_NONE;
-    bool bLeftFoot = false;
     bool bWasSwimming = false;
+    bool bEntrySplashPending = false;
     bool bRising = false;
     bool bDiving = false;
     bool bShowControls = false;

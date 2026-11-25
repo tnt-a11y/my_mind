@@ -19,6 +19,7 @@ https://polyhaven.com/a/mountainside
 https://polyhaven.com/a/rock_moss_set_01
 https://polyhaven.com/a/coast_rocks_01
 https://polyhaven.com/a/coast_sand_05
+https://polyhaven.com/a/sand_03
 https://polyhaven.com/a/forrest_ground_01
 https://polyhaven.com/a/fern_02
 https://polyhaven.com/a/shrub_sorrel_01
@@ -33,9 +34,19 @@ https://freesound.org/people/paulprit/sounds/724054/
 Manny and his land locomotion animations are by Epic Games, from the
 Unreal Engine Third Person template.
 
-Swimming and treading animations from Universal Animation Library by
-Quaternius, CC0. Retargeted to Manny.
+Treading animation from Universal Animation Library by Quaternius, CC0.
+Retargeted to Manny.
 https://quaternius.com/packs/universalanimationlibrary.html
+
+Surface crawl and underwater breaststroke from Carnegie Mellon University
+Graphics Lab Motion Capture Database subject 126, trials 11 and 04.
+The database is free for all uses and was supported by NSF Grant #0196217.
+The strokes were retargeted to Manny and edited into in-place loops.
+Hip and ankle motion was adjusted for swimming without support.
+Saltwind's authored wade-to-swim transition uses Manny's land walk
+and the retargeted surface crawl as its starting and ending poses.
+https://mocap.cs.cmu.edu/
+https://mocap.cs.cmu.edu/search.php?subjectnumber=126
 
 Recorded footsteps and wading sounds from Freesound, under CC0.
 Felix Blume, Footsteps with sneakers, slowly walking on sand in the desert.
@@ -44,3 +55,25 @@ SpliceSound, Footsteps, sneakers on dry leaves.
 https://freesound.org/people/SpliceSound/sounds/218305/
 Breviceps, Step into water puddle / wade.
 https://freesound.org/people/Breviceps/sounds/450621/
+
+Shoreline scan models and their textures from Poly Haven, CC0.
+https://polyhaven.com/a/dead_tree_trunk
+https://polyhaven.com/a/dead_quiver_branch_01
+https://polyhaven.com/a/dry_branches_medium_01
+https://polyhaven.com/a/lambis_shell
+https://polyhaven.com/a/plastic_bottle_gallon
+https://polyhaven.com/a/can_rusted
+The beach snail, cog, and rain ambience were generated for Saltwind.
+
+Collectible wood uses CC0 Poly Haven scans. Inventory thumbnails were rendered from the same meshes.
+https://polyhaven.com/a/dead_tree_trunk
+https://polyhaven.com/a/dead_tree_trunk_02
+https://polyhaven.com/a/dead_quiver_branch_01
+https://polyhaven.com/a/dead_quiver_branch_02
+https://polyhaven.com/a/dry_branches_medium_01
+https://polyhaven.com/a/dead_quiver_trunk
+
+Collectible stones and the campfire's ring use CC0 Poly Haven scans.
+https://polyhaven.com/a/rock_moss_set_01
+https://polyhaven.com/a/boulder_01
+Campfire assembly, fire materials, and crackle audio were authored for Saltwind.

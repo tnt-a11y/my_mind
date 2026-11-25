@@ -4,6 +4,8 @@
 #include "SaltwindDayCycle.generated.h"
 
 class ADirectionalLight;
+class AExponentialHeightFog;
+class APostProcessVolume;
 class ASkyLight;
 
 UCLASS()
@@ -17,6 +19,9 @@ public:
     virtual void Tick(float DeltaTime) override;
     virtual TStatId GetStatId() const override;
     void AdvanceHours(float Offset);
+    void PreviewNextPhase();
+    void SetRainCover(float Value) { RainCover = Value; }
+    static constexpr float SecondsPerHour = 80.0f;
     float GetHour() const { return Hour; }
 
 private:
@@ -25,6 +30,11 @@ private:
     TWeakObjectPtr<ADirectionalLight> Sun;
     TWeakObjectPtr<ADirectionalLight> Moon;
     TWeakObjectPtr<ASkyLight> Sky;
-    float Hour = 14.4f;
+    TWeakObjectPtr<AExponentialHeightFog> Fog;
+    TWeakObjectPtr<APostProcessVolume> Grading;
+    float Hour = 7.0f;
     float UpdateElapsed = 0.0f;
+    float PreviewHoursLeft = 0.0f;
+    float PreviewHoursPerSecond = 0.0f;
+    float RainCover = 0.0f;
 };

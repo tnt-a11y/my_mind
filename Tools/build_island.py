@@ -281,6 +281,10 @@ def main():
     generated = "Geometry"
     land, *_ = import_mesh(SOURCE / "CoralReachTerrain.glb", generated + "/Land")
     water, *_ = import_mesh(SOURCE / "CoralReachOcean.glb", generated + "/Water")
+    water_settings = water.get_editor_property("nanite_settings")
+    water_settings.enabled = False
+    water.set_editor_property("nanite_settings", water_settings)
+    asset_lib.save_loaded_asset(water, False)
     mesh_land = land.get_editor_property("body_setup")
     mesh_land.set_editor_property("collision_trace_flag", u.CollisionTraceFlag.CTF_USE_COMPLEX_AS_SIMPLE)
     asset_lib.save_loaded_asset(land, False)
@@ -327,11 +331,6 @@ def main():
     set_value(sea, "affect_distance_field_lighting", False)
     note(f"Terrain bounds: {ground.get_local_bounds()}")
     scene_lighting()
-
-    volume = actor(u.PhysicsVolume,"Ocean swimming volume",z=-14.8,group="Gameplay")
-    volume.set_actor_scale3d(u.Vector(199.0,153.0,15.0))
-    volume.set_editor_properties(dict(water_volume=True,fluid_friction=.55,priority=8))
-    note(f"Swimming bounds: {volume.get_actor_bounds(False)}")
 
     post_water = actor(u.PostProcessVolume,"Underwater light falloff",z=-13.85,group="Gameplay")
     post_water.set_actor_scale3d(u.Vector(199,153,13.8))
